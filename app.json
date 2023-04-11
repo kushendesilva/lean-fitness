@@ -3,41 +3,39 @@
     "name": "Lean Fitness",
     "slug": "lean-fitness",
     "owner": "kushenthimira",
-    "privacy": "unlisted",
-    "platforms": ["ios", "android"],
-    "version": "1.0.0-dev",
+    "githubUrl": "https://github.com/kushendesilva/lean-fitness",
+    "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/logo-sm.png",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "enabled": true,
-      "fallbackToCacheTimeout": 10000
+      "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "npc.cipher.leanfitness",
-      "buildNumber": "1.0.0",
-      "infoPlist": {
-        "NSPhotoLibraryUsageDescription": "Use the photo library to change your avatar."
-      },
-      "userInterfaceStyle": "automatic"
-    },
     "android": {
       "package": "npc.cipher.leanfitness",
-      "versionCode": 1,
-      "userInterfaceStyle": "automatic",
-      "permissions": ["VIBRATE", "CAMERA"]
+      "permissions": ["LOCATION"],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#262E48"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyD87ToWqo4Y8vIjlgURucGldvbD5h44l3k"
+        }
+      }
     },
-    "packagerOpts": {
-      "config": "metro.config.js",
-      "sourceExts": ["js", "jsx", "svg", "ts", "tsx"]
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "npc.cipher.leanfitness"
     },
-    "description": "",
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
     "extra": {
       "eas": {
         "projectId": "9bdddd60-4660-495d-8796-e203b10ac528"

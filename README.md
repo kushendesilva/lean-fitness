@@ -2,7 +2,7 @@
 <p align="center"><em>Lean Fitness..💪
 </em></p><br>
 
-<!-- - 📱 Downloadable APK available <a href="https://github.com/kushenthimira/lean-fitness/releases/download/v1.0.0-dev/lean-fitness.apk" target="blank">**here**</a> -->
+- 📱 Downloadable APK available <a href="https://github.com/kushendesilva/lean-fitness/releases/download/dev/lean-fitness.apk" target="blank">**here**</a>
 - 🌐 Personal Website - **https://kushen.tech**
 - 📫 How to reach me - **kushendesilva@gmail.com**
 
