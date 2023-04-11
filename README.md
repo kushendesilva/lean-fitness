@@ -15,7 +15,12 @@
 - [ ] Premium Features
 - [ ] Chat
 
-<img alt="icon" src="/assets/icon.png">
+<h3 align="left">Resources</h3>
+
+|                                                                  |                                                                  |                                                                  |
+| :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
+| <img width="1604" alt="screenshot" src="/assets/previews/1.jpg"> | <img width="1604" alt="screenshot" src="/assets/previews/2.jpg"> | <img width="1604" alt="screenshot" src="/assets/previews/3.jpg"> |
+| <img width="1604" alt="screenshot" src="/assets/previews/4.jpg"> | <img width="1604" alt="screenshot" src="/assets/previews/5.jpg"> | <img width="1604" alt="screenshot" src="/assets/previews/6.jpg"> |
 
 <h3 align="left">Languages and Tools Used:</h3>
 <p align="left">
