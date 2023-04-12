@@ -1,31 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { getAuth, signOut } from "firebase/auth";
+import React, { useState, useEffect, useContext } from "react";
+import { FlatList, RefreshControl } from "react-native";
 import {
-  getFirestore,
-  collection,
   query,
   where,
-  getDoc,
-  doc,
+  collection,
   getDocs,
+  getFirestore,
 } from "firebase/firestore/lite";
-import { Layout, Text, Button } from "@ui-kitten/components";
-import { ScrollView, RefreshControl } from "react-native";
+import { getAuth } from "firebase/auth";
+import { Icon, Text, ListItem, Button } from "@ui-kitten/components";
 import Screen from "../components/Screen";
-import { ProfileCard } from "../components/ProfileCard";
-import { Calendar } from "react-native-calendars";
 
 export default function ({ navigation }) {
   const auth = getAuth();
   const db = getFirestore();
 
-  const [user, setUser] = useState({ name: "", weight: "", age: "" });
-  const [refreshing, setRefreshing] = useState(false);
-  const [list, setList] = useState([]);
-  const [markedDates, setMarkedDates] = useState({});
+  const [refreshing, setRefreshing] = useState(true);
 
+  const [list, setList] = useState([]);
   useEffect(() => {
-    getNote();
     getList();
   }, []);
 
@@ -35,121 +28,43 @@ export default function ({ navigation }) {
       where("uid", "==", auth.currentUser.uid)
     );
     const querySnapshot = await getDocs(q);
-    const workoutList = querySnapshot.docs.map((doc) => ({
-      ...doc.data(),
-      id: doc.id,
-    }));
-    setList(workoutList);
+    setList(querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     setRefreshing(false);
-
-    // Mark dates on the calendar
-    const markedDatesObj = {};
-    workoutList.forEach((workout) => {
-      let date;
-      if (workout.createdAt instanceof Date) {
-        date = workout.createdAt.toISOString().split("T")[0];
-      } else if (
-        workout.createdAt &&
-        workout.createdAt.hasOwnProperty("seconds")
-      ) {
-        date = new Date(workout.createdAt.seconds * 1000)
-          .toISOString()
-          .split("T")[0];
-      }
-      if (date) {
-        // Update the markedDatesObj based on the "type" field
-        const markedColor = workout.type === "regular" ? "blue" : "red";
-        markedDatesObj[date] = { marked: true, dotColor: markedColor };
-      }
-    });
-    setMarkedDates(markedDatesObj);
-  };
-
-  const getNote = async () => {
-    const docSnap = await getDoc(doc(db, "users", auth.currentUser.uid));
-    if (docSnap.exists()) {
-      const userData = docSnap.data();
-      setUser(userData);
-    } else {
-      const userData = { name: "", weight: "", age: "" };
-      setUser(userData);
+    if (querySnapshot.empty) {
+      setList(null);
     }
   };
 
-  const onRefresh = async () => {
-    setRefreshing(true);
-    await getNote();
-    await getList();
-    setRefreshing(false);
-  };
+  const renderItemAccessory = (props, elapsedTime) => (
+    <Button size="tiny">{`${elapsedTime} Seconds`}</Button>
+  );
+
+  const renderItemIcon = (props) => <Icon {...props} name="person" />;
 
   return (
-    <Screen headerTitle="Profile">
-      <ScrollView
+    <Screen
+      backAction={() => {
+        navigation.goBack();
+      }}
+      headerTitle="Workout Logs"
+    >
+      <FlatList
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          <RefreshControl refreshing={refreshing} onRefresh={getList} />
         }
-      >
-        <ProfileCard
-          email={auth.currentUser.email}
-          onPress={() => {
-            signOut(auth);
-          }}
-          onEditPress={() =>
-            navigation.navigate("ProfileEdit", {
-              user: {
-                name: user.name,
-                weight: user.weight,
-                email: auth.currentUser.email,
-                id: auth.currentUser.uid,
-                age: user.age,
-              },
-            })
-          }
-          name={user.name}
-          age={user.age}
-          weight={user.weight}
-        />
-
-        <Text
-          category="h5"
-          style={{ marginTop: 20, textAlign: "center", fontWeight: "bold" }}
-        >
-          Workout Progress
-        </Text>
-        <Calendar markedDates={markedDates} />
-        <Layout
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            marginHorizontal: 20,
-          }}
-        >
-          <Button>Workout Logs</Button>
-          <Layout>
-            <Text
-              category="label"
-              style={{
-                marginTop: 5,
-                textAlign: "right",
-                fontWeight: "bold",
-              }}
-            >
-              Regular Workouts:
-            </Text>
-            <Text
-              category="label"
-              style={{
-                marginTop: 5,
-                textAlign: "right",
-                fontWeight: "bold",
-              }}
-            >
-              Specialized Workouts:
-            </Text>
-          </Layout>
-        </Layout>
-      </ScrollView>
+        data={list}
+        keyExtractor={(item) => `${item.id}`}
+        renderItem={({ item }) => (
+          <ListItem
+            title={`${item.createdAt.toDate()}`}
+            description={`${
+              item.type.charAt(0).toUpperCase() + item.type.slice(1)
+            } Workout`}
+            accessoryLeft={renderItemIcon}
+            accessoryRight={() => renderItemAccessory({}, item.elapsedTime)}
+          />
+        )}
+      />
     </Screen>
   );
 }

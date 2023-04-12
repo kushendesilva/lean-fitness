@@ -79,7 +79,7 @@ export default function ({ navigation, route }) {
       setIsTimerRunning(false);
       setButtonName("Skip Exercise");
       if (newIndex + 1 == exerciseData.exercises.length) {
-        setButtonName("Complete Workout");
+        setButtonName("End Workout");
       }
     } else {
       navigation.navigate("EndWorkout", { elapsedTime, type: "special", uid });

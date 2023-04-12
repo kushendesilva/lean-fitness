@@ -9,6 +9,7 @@ import {
   Icon,
 } from "@ui-kitten/components";
 import Screen from "../components/Screen";
+import * as Progress from "react-native-progress";
 import exercisesData from "../../assets/exercises.json";
 
 export default function ({ navigation, route }) {
@@ -91,7 +92,7 @@ export default function ({ navigation, route }) {
       setIsTimerRunning(false);
       setButtonName("Skip Exercise");
       if (newIndex + 1 == exerciseData.exercises.length) {
-        setButtonName("Complete Workout");
+        setButtonName("End Workout");
       }
     } else {
       navigation.navigate("EndWorkout", { elapsedTime, type: "regular", uid });
@@ -216,6 +217,15 @@ export default function ({ navigation, route }) {
             {buttonName}
           </Button>
         </Layout>
+        <Progress.Bar
+          progress={(currentIndex + 1) / exerciseData.exercises.length}
+          width={null} // set width to null to fill the parent container
+          height={10} // set height as per your preference
+          color={theme["color-primary-500"]} // set color as per your preference
+          unfilledColor={theme["color-info-100"]} // set unfilled color as per your preference
+          borderRadius={5} // set border radius as per your preference
+          style={{ marginHorizontal: 20, marginBottom: 25 }} // apply any additional styles as per your preference
+        />
       </ScrollView>
     </Screen>
   );

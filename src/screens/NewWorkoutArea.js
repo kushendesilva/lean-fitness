@@ -1,5 +1,7 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { Image } from "react-native";
+import { Text, Button, Layout } from "@ui-kitten/components";
+import Screen from "../components/Screen";
 
 const NewWorkout = ({ navigation, route }) => {
   const { area, uid } = route.params;
@@ -10,36 +12,44 @@ const NewWorkout = ({ navigation, route }) => {
     });
   };
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>New Workout</Text>
-      {/* Display confirmation message or any other content */}
-      <TouchableOpacity style={styles.startButton} onPress={handleStartWorkout}>
-        <Text style={styles.startButtonText}>Start Workout</Text>
-      </TouchableOpacity>
-    </View>
+    <Screen
+      backAction={() => {
+        navigation.goBack();
+      }}
+      headerTitle={"New Specialized Workout"}
+    >
+      <Layout style={{ marginHorizontal: 20 }}>
+        <Layout
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Image
+            resizeMode="contain"
+            style={{
+              height: 320,
+              width: 320,
+            }}
+            source={require("../../assets/images/4.jpg")}
+          />
+        </Layout>
+        <Text
+          category="h5"
+          style={{
+            textAlign: "center",
+            fontWeight: "bold",
+            marginVertical: 20,
+          }}
+        >
+          New Specialized Workout
+        </Text>
+        <Button size="large" onPress={handleStartWorkout}>
+          Start Workout
+        </Button>
+      </Layout>
+    </Screen>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
-  },
-  startButton: {
-    backgroundColor: "#007AFF",
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 5,
-  },
-  startButtonText: {
-    color: "#fff",
-    fontSize: 18,
-  },
-});
 
 export default NewWorkout;

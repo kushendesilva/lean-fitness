@@ -9,7 +9,7 @@ import {
   doc,
   getDocs,
 } from "firebase/firestore/lite";
-import { Layout, Text, Button } from "@ui-kitten/components";
+import { Layout, Text, Button, Icon } from "@ui-kitten/components";
 import { ScrollView, RefreshControl } from "react-native";
 import Screen from "../components/Screen";
 import { ProfileCard } from "../components/ProfileCard";
@@ -140,27 +140,56 @@ export default function ({ navigation }) {
           >
             Workout Logs
           </Button>
-          <Layout>
-            <Text
-              category="label"
+          <Layout
+            style={{
+              justifyContent: "center",
+            }}
+          >
+            <Layout
               style={{
-                marginTop: 5,
-                textAlign: "right",
-                fontWeight: "bold",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-end",
               }}
             >
-              Regular Workouts:
-            </Text>
-            <Text
-              category="label"
+              <Text
+                category="label"
+                style={{
+                  textAlign: "right",
+                  fontWeight: "bold",
+                }}
+              >
+                Regular Workouts:
+              </Text>
+              <Icon
+                style={{ height: 15, width: 15, marginLeft: 5 }}
+                fill="blue"
+                name="radio-button-on"
+              />
+            </Layout>
+            <Layout
               style={{
                 marginTop: 5,
-                textAlign: "right",
-                fontWeight: "bold",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "flex-end",
               }}
             >
-              Specialized Workouts:
-            </Text>
+              <Text
+                category="label"
+                style={{
+                  textAlign: "right",
+                  fontWeight: "bold",
+                }}
+              >
+                Specialized Workouts:
+              </Text>
+              <Icon
+                style={{ height: 15, width: 15, marginLeft: 5 }}
+                fill="red"
+                name="radio-button-on"
+              />
+            </Layout>
           </Layout>
         </Layout>
       </ScrollView>

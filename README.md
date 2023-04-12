@@ -2,7 +2,7 @@
 <p align="center"><em>Lean Fitness..💪
 </em></p><br>
 
-- 📱 Downloadable APK available <a href="https://github.com/kushendesilva/lean-fitness/releases/download/dev/lean-fitness.apk" target="blank">**here**</a>
+- 📱 Downloadable APK available <a href="https://github.com/kushendesilva/lean-fitness/releases/download/stable/lean-fitness.apk" target="blank">**here**</a>
 - 🌐 Personal Website - **https://kushen.tech**
 - 📫 How to reach me - **kushendesilva@gmail.com**
 
@@ -10,17 +10,19 @@
 
 - [x] Create Account
 - [x] Login
-- [ ] Workout Programs
-- [ ] Diet Plans
-- [ ] Premium Features
-- [ ] Chat
+- [x] Workout Programs
+- [x] Diet Plans
+- [x] Premium Features
+- [x] Chat
 
 <h3 align="left">Resources</h3>
 
-|                                                                  |                                                                  |                                                                  |
-| :--------------------------------------------------------------: | :--------------------------------------------------------------: | :--------------------------------------------------------------: |
-| <img width="1604" alt="screenshot" src="/assets/previews/1.jpg"> | <img width="1604" alt="screenshot" src="/assets/previews/2.jpg"> | <img width="1604" alt="screenshot" src="/assets/previews/3.jpg"> |
-| <img width="1604" alt="screenshot" src="/assets/previews/4.jpg"> | <img width="1604" alt="screenshot" src="/assets/previews/5.jpg"> | <img width="1604" alt="screenshot" src="/assets/previews/6.jpg"> |
+|                                                                   |                                                                   |                                                                   |
+| :---------------------------------------------------------------: | :---------------------------------------------------------------: | :---------------------------------------------------------------: |
+| <img width="1604" alt="screenshot" src="/assets/previews/1.jpg">  | <img width="1604" alt="screenshot" src="/assets/previews/2.jpg">  | <img width="1604" alt="screenshot" src="/assets/previews/3.jpg">  |
+| <img width="1604" alt="screenshot" src="/assets/previews/4.jpg">  | <img width="1604" alt="screenshot" src="/assets/previews/5.jpg">  | <img width="1604" alt="screenshot" src="/assets/previews/6.jpg">  |
+| <img width="1604" alt="screenshot" src="/assets/previews/7.jpg">  | <img width="1604" alt="screenshot" src="/assets/previews/8.jpg">  | <img width="1604" alt="screenshot" src="/assets/previews/9.jpg">  |
+| <img width="1604" alt="screenshot" src="/assets/previews/10.jpg"> | <img width="1604" alt="screenshot" src="/assets/previews/11.jpg"> | <img width="1604" alt="screenshot" src="/assets/previews/12.jpg"> |
 
 <h3 align="left">Languages and Tools Used:</h3>
 <p align="left">

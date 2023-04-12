@@ -4,7 +4,7 @@
     "slug": "lean-fitness",
     "owner": "kushenthimira",
     "githubUrl": "https://github.com/kushendesilva/lean-fitness",
-    "version": "1.0.0-beta",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -20,7 +20,7 @@
       "package": "npc.cipher.leanfitness",
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#262E48"
+        "backgroundColor": "#000"
       }
     },
     "ios": {
