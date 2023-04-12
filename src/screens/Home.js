@@ -16,6 +16,15 @@ export default function ({ navigation }) {
   const auth = getAuth();
   const db = getFirestore();
 
+  const imageMap = {
+    Abs: require("../../assets/exercises/Abs.jpg"),
+    Chest: require("../../assets/exercises/Chest.jpg"),
+    "Lower Legs": require("../../assets/exercises/LowerLegs.jpg"),
+    "Lower Arms": require("../../assets/exercises/LowerArms.jpg"),
+    "Upper Legs": require("../../assets/exercises/UpperLegs.jpg"),
+    "Upper Arms": require("../../assets/exercises/UpperArms.jpg"),
+  };
+
   const [user, setUser] = useState({
     name: "",
     weight: "",
@@ -51,16 +60,14 @@ export default function ({ navigation }) {
       return (
         <TouchableNativeFeedback
           onPress={() =>
-            navigation.navigate("ExerciseArea", {
+            navigation.navigate("NewWorkoutArea", {
               area: item,
+              uid: auth.currentUser.uid,
             })
           }
         >
           <Layout style={styles.cardSmall}>
-            <ImageBackground
-              style={styles.imageSmall}
-              source={require("../../assets/exercises/Abs.jpg")}
-            >
+            <ImageBackground style={styles.imageSmall} source={imageMap[item]}>
               <Layout style={styles.titleContainerSmall}>
                 <Text category="h6" style={styles.titleSmall}>
                   {item}
@@ -75,7 +82,7 @@ export default function ({ navigation }) {
   };
 
   return (
-    <Screen headerTitle="Workout">
+    <Screen headerTitle="Your Workout Plans">
       <ScrollView
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
@@ -87,11 +94,15 @@ export default function ({ navigation }) {
             paddingBottom: 20,
           }}
         >
+          <Text style={{ fontWeight: "bold", marginBottom: 20 }} category="h6">
+            Daily Workout
+          </Text>
           <TouchableNativeFeedback
             onPress={() =>
-              navigation.navigate("Exercise", {
+              navigation.navigate("NewWorkout", {
                 type: user.type,
                 weight: user.weight,
+                uid: auth.currentUser.uid,
               })
             }
           >
@@ -116,7 +127,7 @@ export default function ({ navigation }) {
           }}
         >
           <Text style={{ fontWeight: "bold", marginBottom: 20 }} category="h6">
-            Specialized Areas
+            Specialized Workouts
           </Text>
           <FlatList
             horizontal
@@ -131,6 +142,9 @@ export default function ({ navigation }) {
             paddingBottom: 20,
           }}
         >
+          <Text style={{ fontWeight: "bold", marginBottom: 20 }} category="h6">
+            Diet Plans
+          </Text>
           <TouchableNativeFeedback
             onPress={() =>
               navigation.navigate("DietPlan", {

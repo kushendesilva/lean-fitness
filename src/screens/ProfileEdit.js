@@ -81,16 +81,6 @@ export default function ({ navigation, route }) {
           label="Email"
           disabled={true}
         />
-        <Button
-          style={{ alignSelf: "center", marginVertical: 10, width: 300 }}
-          status="basic"
-          disabled={visibility}
-          onPress={() => {
-            reset();
-          }}
-        >
-          Reset Password
-        </Button>
 
         {RenderIf(
           visibility,
@@ -106,6 +96,7 @@ export default function ({ navigation, route }) {
             Change
           </Button>
         )}
+
         {RenderIf(
           !visibility,
           <Layout
@@ -139,6 +130,16 @@ export default function ({ navigation, route }) {
             </Button>
           </Layout>
         )}
+        <Button
+          style={{ alignSelf: "center", marginTop: 20, width: "95%" }}
+          disabled={visibility}
+          size="giant"
+          onPress={() => {
+            reset();
+          }}
+        >
+          Reset Password
+        </Button>
       </Layout>
     </Screen>
   );

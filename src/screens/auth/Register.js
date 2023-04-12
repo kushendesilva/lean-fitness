@@ -32,6 +32,7 @@ export default function ({ navigation, route }) {
         age,
         weight,
         type,
+        premium: false,
       };
       const usersRef = doc(db, "users", uid);
       await setDoc(usersRef, data);

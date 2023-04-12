@@ -3,10 +3,18 @@ import { Layout, useTheme, Button } from "@ui-kitten/components";
 import Screen from "../components/Screen";
 import { CreditCardInput } from "react-native-credit-card-input-view";
 import { ThemeContext } from "../configs/Theme";
+import { updateDoc, doc, getFirestore } from "firebase/firestore/lite";
 
-export default function ({ navigation }) {
+export default function ({ navigation, route }) {
+  const { id } = route.params;
+  const db = getFirestore();
   const themeContext = useContext(ThemeContext);
   const theme = useTheme();
+
+  const updateUser = async () => {
+    const testDocRef = doc(db, "users", id);
+    await updateDoc(testDocRef, { premium: true });
+  };
 
   return (
     <Screen
@@ -47,6 +55,7 @@ export default function ({ navigation }) {
           size="large"
           style={{ position: "absolute", alignSelf: "center", top: 250 }}
           onPress={() => {
+            updateUser();
             navigation.goBack();
           }}
         >

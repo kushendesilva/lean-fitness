@@ -15,7 +15,21 @@ export default function ({ navigation, route }) {
   const theme = useTheme();
   const [buttonName, setButtonName] = useState("Skip Exercise");
 
-  const { weight, type } = route.params;
+  const [startTime, setStartTime] = useState(new Date());
+  const [elapsedTime, setElapsedTime] = useState(0);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const currentTime = new Date();
+      const elapsed = Math.floor((currentTime - startTime) / 1000);
+      setElapsedTime(elapsed);
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  const { weight, type, uid } = route.params;
 
   let weightClass;
   if (weight < 60) {
@@ -80,7 +94,7 @@ export default function ({ navigation, route }) {
         setButtonName("Complete Workout");
       }
     } else {
-      navigation.navigate("Home");
+      navigation.navigate("EndWorkout", { elapsedTime, type: "regular", uid });
     }
   };
 

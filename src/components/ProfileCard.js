@@ -38,7 +38,7 @@ export const ProfileCard = ({
             style={{
               flexDirection: "row",
               justifyContent: "space-evenly",
-              backgroundColor: theme["color-info-100"],
+              backgroundColor: theme["color-primary-500"],
               padding: 20,
               borderRadius: 25,
               elevation: 2,
@@ -47,7 +47,7 @@ export const ProfileCard = ({
           >
             <Icon
               style={{ width: 40, height: 40 }}
-              fill={theme["color-info-default"]}
+              fill={theme["color-primary-100"]}
               name="person"
             />
             <Layout
@@ -92,7 +92,6 @@ export const ProfileCard = ({
             marginTop: 20,
             borderRadius: 5,
           }}
-          status="basic"
           onPress={onPress}
           accessoryRight={LogoutIcon}
         >

@@ -125,21 +125,7 @@ export default function ({ navigation }) {
             marginHorizontal: 20,
           }}
         >
-          <Button
-            onPress={() =>
-              navigation.navigate("Logs", {
-                user: {
-                  name: user.name,
-                  weight: user.weight,
-                  email: auth.currentUser.email,
-                  id: auth.currentUser.uid,
-                  age: user.age,
-                },
-              })
-            }
-          >
-            Workout Logs
-          </Button>
+          <Button>Workout Logs</Button>
           <Layout>
             <Text
               category="label"

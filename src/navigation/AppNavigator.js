@@ -16,16 +16,17 @@ import Loading from "../screens/utils/Loading";
 //General Screens
 import Home from "../screens/Home";
 import ProfileEdit from "../screens/ProfileEdit";
-import PaymentMethods from "../screens/PaymentMethods";
-import NewPayment from "../screens/NewPayment";
 import Profile from "../screens/Profile";
-import Help from "../screens/Help";
 import Exercise from "../screens/Exercise";
 import ExerciseArea from "../screens/ExerciseArea";
 import DietPlan from "../screens/DietPlan";
 import Premium from "../screens/Premium";
 import BuyPremium from "../screens/BuyPremium";
-import Chat from "../screens/Chat";
+import NewWorkout from "../screens/NewWorkout";
+import NewWorkoutArea from "../screens/NewWorkoutArea";
+import EndWorkout from "../screens/EndWorkout";
+import ChatScreen from "../screens/ChatScreen";
+import Logs from "../screens/Logs";
 
 // Auth screens
 import Login from "../screens/auth/Login";
@@ -39,11 +40,12 @@ import ForgotPassword from "../screens/auth/ForgotPassword";
 const firebaseConfig = {
   apiKey: "AIzaSyAFEUeW1W7Yt0DwEwnckX2A0zgwLXx25OA",
   authDomain: "lean-fitness-ravindu.firebaseapp.com",
+  databaseURL:
+    "https://lean-fitness-ravindu-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "lean-fitness-ravindu",
   storageBucket: "lean-fitness-ravindu.appspot.com",
   messagingSenderId: "347051387393",
   appId: "1:347051387393:web:7c7430fa85b05d5fc3ae00",
-  databaseURL: "https://lean-fitness-ravindu.app.firebaseio.com",
 };
 
 if (getApps().length === 0) {
@@ -81,12 +83,13 @@ const Main = () => {
       <MainStack.Screen name="Exercise" component={Exercise} />
       <MainStack.Screen name="ExerciseArea" component={ExerciseArea} />
       <MainStack.Screen name="DietPlan" component={DietPlan} />
-      <MainStack.Screen name="Help" component={Help} />
       <MainStack.Screen name="BuyPremium" component={BuyPremium} />
-      <MainStack.Screen name="Chat" component={Chat} />
+      <MainStack.Screen name="ChatScreen" component={ChatScreen} />
       <MainStack.Screen name="ProfileEdit" component={ProfileEdit} />
-      <MainStack.Screen name="PaymentMethods" component={PaymentMethods} />
-      <MainStack.Screen name="NewPayment" component={NewPayment} />
+      <MainStack.Screen name="Logs" component={Logs} />
+      <MainStack.Screen name="NewWorkout" component={NewWorkout} />
+      <MainStack.Screen name="NewWorkoutArea" component={NewWorkoutArea} />
+      <MainStack.Screen name="EndWorkout" component={EndWorkout} />
     </MainStack.Navigator>
   );
 };
