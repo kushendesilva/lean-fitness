@@ -30,13 +30,7 @@ export default function ({ navigation }) {
           navigation.navigate("NewPayment");
         }}
       />
-      <LocationCard
-        vector
-        location="Default"
-        title="Cash on Delivery"
-        icon="cash-multiple"
-        btnText="Selected"
-      />
+
       <PaymentCard type="mastercard" number="3045" />
       <PaymentCard type="visa" number="4215" />
     </Screen>

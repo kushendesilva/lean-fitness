@@ -1,0 +1,53 @@
+{
+  "low": {
+    "weight_class": "Low",
+    "days": {
+      "Monday": [
+        "Breakfast: 1 small apple, 1 slice of whole grain bread, 1 tablespoon of peanut butter",
+        "Lunch: 1 cup of mixed greens with 1/2 cup of cherry tomatoes, 3 ounces of grilled chicken breast, 1 tablespoon of balsamic vinaigrette",
+        "Dinner: 4 ounces of baked salmon, 1/2 cup of quinoa, 1 cup of steamed broccoli",
+        "Snack: 1 small banana, 1 ounce of almonds"
+      ],
+      "Tuesday": [
+        "Breakfast: 1 cup of cooked oatmeal with 1/2 cup of mixed berries and 1 tablespoon of chia seeds",
+        "Lunch: 1 cup of vegetable stir-fry with 3 ounces of tofu, 1/2 cup of brown rice",
+        "Dinner: 4 ounces of grilled chicken breast, 1 cup of roasted vegetables",
+        "Snack: 1 cup of low-fat yogurt with 1/4 cup of granola"
+      ]
+    }
+  },
+  "mid": {
+    "weight_class": "Mid",
+    "days": {
+      "Monday": [
+        "Breakfast: 2 slices of whole grain bread, 2 scrambled eggs, 1/2 avocado",
+        "Lunch: 1 cup of mixed greens with 1/4 cup of feta cheese, 1/4 cup of olives, 1 tablespoon of vinaigrette dressing",
+        "Dinner: 6 ounces of grilled fish, 1 cup of roasted vegetables, 1/2 cup of quinoa",
+        "Snack: 1 medium apple, 1 ounce of mixed nuts"
+      ],
+      "Tuesday": [
+        "Breakfast: 1 cup of cooked quinoa with 1/2 cup of roasted vegetables and 2 boiled eggs",
+        "Lunch: 1 cup of vegetable curry with 1/2 cup of brown rice",
+        "Dinner: 6 ounces of grilled chicken breast, 1 cup of steamed broccoli, 1/2 cup of cooked pasta",
+        "Snack: 1 cup of Greek yogurt with 1/4 cup of mixed berries"
+      ]
+    }
+  },
+  "high": {
+    "weight_class": "High",
+    "days": {
+      "Monday": [
+        "Breakfast: 2 slices of whole grain bread, 3 scrambled eggs, 1/2 avocado",
+        "Lunch: 1 cup of mixed greens with 1/2 cup of roasted vegetables, 4 ounces of grilled steak, 2 tablespoons of vinaigrette dressing",
+        "Dinner: 8 ounces of baked fish, 1 cup of quinoa, 1 cup of steamed vegetables",
+        "Snack: 1 large banana, 1 ounce of cashews"
+      ],
+      "Tuesday": [
+        "Breakfast: 1 cup of cooked brown rice with 1/2 cup of mixed vegetables and 4 ounces of grilled tofu",
+        "Lunch: 1 cup of vegetable stir-fry with 1 cup of cooked noodles and 6 ounces of shrimp",
+        "Dinner: 8 ounces of roasted chicken, 1 cup of mashed potatoes, 1 cup of roasted vegetables",
+        "Snack: 1 cup of cottage cheese with 1/2 cup of pineapple"
+      ]
+    }
+  }
+}

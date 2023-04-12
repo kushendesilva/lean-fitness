@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-import { setDoc, doc, getFirestore } from "firebase/firestore/lite";
+import { updateDoc, doc, getFirestore } from "firebase/firestore/lite";
 import { Input, Button, Icon, Layout } from "@ui-kitten/components";
 import RenderIf from "../configs/RenderIf";
 import Screen from "../components/Screen";
@@ -10,7 +10,7 @@ export default function ({ navigation, route }) {
   const auth = getAuth();
   const db = getFirestore();
   const [name, setName] = useState(user.name);
-  const [phone, setPhone] = useState(user.phone);
+  const [weight, setWeight] = useState(user.weight);
   const [visibility, setVisibility] = useState(true);
 
   const EditIcon = (props) => <Icon {...props} name="edit-2-outline" />;
@@ -29,12 +29,10 @@ export default function ({ navigation, route }) {
   }
 
   const updateUser = async () => {
-    const testCollectionRef = doc(db, "users", user.id);
-    await setDoc(testCollectionRef, {
+    const testDocRef = doc(db, "users", user.id); // Assuming `user` is defined
+    await updateDoc(testDocRef, {
       name,
-      id: user.id,
-      email: user.email,
-      phone,
+      weight,
     });
   };
 
@@ -43,7 +41,7 @@ export default function ({ navigation, route }) {
       backAction={() => {
         navigation.goBack();
       }}
-      headerTitle={"Account Information"}
+      headerTitle={"Personal Information"}
     >
       <Layout style={{ padding: 10 }}>
         <Input
@@ -61,11 +59,19 @@ export default function ({ navigation, route }) {
           style={{ marginHorizontal: "2%", marginVertical: "1%" }}
           size="large"
           status="primary"
-          value={phone}
-          label="Phone"
-          placeholder="Change Your Phone Number"
-          onChangeText={(nextValue) => setPhone(nextValue)}
+          value={weight}
+          label="Weight"
+          placeholder="Change Your Weight"
+          onChangeText={(nextValue) => setWeight(nextValue)}
           disabled={visibility}
+        />
+        <Input
+          style={{ marginHorizontal: "2%", marginVertical: "1%" }}
+          size="large"
+          status="primary"
+          value={user.age}
+          label="Age"
+          disabled={true}
         />
         <Input
           style={{ marginHorizontal: "2%", marginVertical: "1%" }}

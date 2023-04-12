@@ -4,7 +4,7 @@
     "slug": "lean-fitness",
     "owner": "kushenthimira",
     "githubUrl": "https://github.com/kushendesilva/lean-fitness",
-    "version": "1.0.0",
+    "version": "1.0.0-beta",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -18,15 +18,9 @@
     "assetBundlePatterns": ["**/*"],
     "android": {
       "package": "npc.cipher.leanfitness",
-      "permissions": ["LOCATION"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#262E48"
-      },
-      "config": {
-        "googleMaps": {
-          "apiKey": "AIzaSyD87ToWqo4Y8vIjlgURucGldvbD5h44l3k"
-        }
       }
     },
     "ios": {

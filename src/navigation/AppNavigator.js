@@ -10,23 +10,23 @@ import {
 } from "@ui-kitten/components";
 import { AuthContext } from "../provider/AuthProvider";
 
-//Screens
+//Utility Screens
+import Loading from "../screens/utils/Loading";
+
+//General Screens
 import Home from "../screens/Home";
-import NewRequest from "../screens/NewRequest";
-import NewRider from "../screens/NewRider";
-import Confirmation from "../screens/Confirmation";
-import Ongoing from "../screens/Ongoing";
+import ProfileEdit from "../screens/ProfileEdit";
 import PaymentMethods from "../screens/PaymentMethods";
 import NewPayment from "../screens/NewPayment";
-import ProfileInformation from "../screens/ProfileInformation";
-import Request from "../screens/Request";
-import TrackLocation from "../screens/TrackLocation";
-import ChangeLocation from "../screens/ChangeLocation";
-import Requests from "../screens/Requests";
-import OngoingRequests from "../screens/OngoingRequests";
 import Profile from "../screens/Profile";
 import Help from "../screens/Help";
-import Loading from "../screens/utils/Loading";
+import Exercise from "../screens/Exercise";
+import ExerciseArea from "../screens/ExerciseArea";
+import DietPlan from "../screens/DietPlan";
+import Premium from "../screens/Premium";
+import BuyPremium from "../screens/BuyPremium";
+import Chat from "../screens/Chat";
+
 // Auth screens
 import Login from "../screens/auth/Login";
 import Welcome from "../screens/auth/Welcome";
@@ -64,7 +64,6 @@ const Auth = () => {
       <AuthStack.Screen name="Areas" component={Areas} />
       <AuthStack.Screen name="Register" component={Register} />
       <AuthStack.Screen name="Login" component={Login} />
-
       <AuthStack.Screen name="ForgotPassword" component={ForgotPassword} />
     </AuthStack.Navigator>
   );
@@ -79,28 +78,22 @@ const Main = () => {
       }}
     >
       <MainStack.Screen name="MainTabs" component={MainTabs} />
-      <MainStack.Screen name="NewRequest" component={NewRequest} />
-      <MainStack.Screen name="NewRider" component={NewRider} />
-      <MainStack.Screen name="Confirmation" component={Confirmation} />
-      <MainStack.Screen name="Ongoing" component={Ongoing} />
-      <MainStack.Screen name="OngoingRequests" component={OngoingRequests} />
+      <MainStack.Screen name="Exercise" component={Exercise} />
+      <MainStack.Screen name="ExerciseArea" component={ExerciseArea} />
+      <MainStack.Screen name="DietPlan" component={DietPlan} />
+      <MainStack.Screen name="Help" component={Help} />
+      <MainStack.Screen name="BuyPremium" component={BuyPremium} />
+      <MainStack.Screen name="Chat" component={Chat} />
+      <MainStack.Screen name="ProfileEdit" component={ProfileEdit} />
       <MainStack.Screen name="PaymentMethods" component={PaymentMethods} />
       <MainStack.Screen name="NewPayment" component={NewPayment} />
-      <MainStack.Screen name="Help" component={Help} />
-      <MainStack.Screen
-        name="ProfileInformation"
-        component={ProfileInformation}
-      />
-      <MainStack.Screen name="Request" component={Request} />
-      <MainStack.Screen name="TrackLocation" component={TrackLocation} />
-      <MainStack.Screen name="ChangeLocation" component={ChangeLocation} />
     </MainStack.Navigator>
   );
 };
 
 const BottomTabBar = ({ navigation, state }) => {
   const HomeIcon = (props) => <Icon {...props} name="clipboard" />;
-  const RequestIcon = (props) => <Icon {...props} name="star" />;
+  const PremiumIcon = (props) => <Icon {...props} name="star" />;
   const ProfileIcon = (props) => <Icon {...props} name="person" />;
   return (
     <BottomNavigation
@@ -108,7 +101,7 @@ const BottomTabBar = ({ navigation, state }) => {
       onSelect={(index) => navigation.navigate(state.routeNames[index])}
     >
       <BottomNavigationTab icon={HomeIcon} title="Workout" />
-      <BottomNavigationTab icon={RequestIcon} title="Premium" />
+      <BottomNavigationTab icon={PremiumIcon} title="Premium" />
       <BottomNavigationTab icon={ProfileIcon} title="Profile" />
     </BottomNavigation>
   );
@@ -123,7 +116,7 @@ const MainTabs = () => (
     tabBar={(props) => <BottomTabBar {...props} />}
   >
     <Tabs.Screen name="Home" component={Home} />
-    <Tabs.Screen name="Requests" component={Requests} />
+    <Tabs.Screen name="Premium" component={Premium} />
     <Tabs.Screen name="Profile" component={Profile} />
   </Tabs.Navigator>
 );

@@ -17,15 +17,10 @@ export default function App() {
 
   const [theme, setTheme] = useState("light");
 
-  const toggleTheme = () => {
-    const nextTheme = theme === "light" ? "dark" : "light";
-    setTheme(nextTheme);
-  };
-
   return (
     <>
       <IconRegistry icons={EvaIconsPack} />
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <ThemeContext.Provider value={{ theme }}>
         <ApplicationProvider {...eva} theme={{ ...eva[theme], ...colors }}>
           <AuthProvider>
             <AppNavigator />

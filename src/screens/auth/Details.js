@@ -15,7 +15,6 @@ export default function ({ navigation }) {
   const [weight, setWeight] = useState("");
   const [age, setAge] = useState("");
 
-  const BackIcon = (props) => <Icon {...props} name="arrow-ios-back-outline" />;
   const NextIcon = (props) => (
     <Icon {...props} name="arrow-ios-forward-outline" />
   );

@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getAuth, signOut } from "firebase/auth";
 import { getDoc, doc, getFirestore } from "firebase/firestore/lite";
-import { ThemeContext } from "../configs/Theme";
+import { ScrollView, RefreshControl } from "react-native"; // Import RefreshControl from react-native library
 import Screen from "../components/Screen";
 import { ProfileCard } from "../components/ProfileCard";
 import { NavButton } from "../components/NavButton";
@@ -9,9 +9,9 @@ import { NavButton } from "../components/NavButton";
 export default function ({ navigation }) {
   const auth = getAuth();
   const db = getFirestore();
-  const themeContext = useContext(ThemeContext);
 
-  const [user, setUser] = useState({ name: "", phone: "" });
+  const [user, setUser] = useState({ name: "", weight: "", age: "" });
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     getNote();
@@ -23,81 +23,45 @@ export default function ({ navigation }) {
       const userData = docSnap.data();
       setUser(userData);
     } else {
-      const userData = { name: "", phone: "" };
+      const userData = { name: "", weight: "", age: "" };
       setUser(userData);
     }
   };
 
+  const onRefresh = async () => {
+    setRefreshing(true);
+    await getNote();
+    setRefreshing(false);
+  };
+
   return (
     <Screen headerTitle="Profile">
-      {user.type == null ? (
-        user.name == "" || user.phone == "" ? (
-          <ProfileCard
-            email={
-              auth.currentUser.email.charAt(0).toUpperCase() +
-              auth.currentUser.email.slice(1)
-            }
-            onPress={() => {
-              signOut(auth);
-            }}
-            onEditPress={() =>
-              navigation.navigate("ProfileInformation", {
-                user: {
-                  email: auth.currentUser.email,
-                  id: auth.currentUser.uid,
-                  name: user.name,
-                  phone: user.phone,
-                },
-              })
-            }
-            addName
-          />
-        ) : (
-          <ProfileCard
-            email={
-              auth.currentUser.email.charAt(0).toUpperCase() +
-              auth.currentUser.email.slice(1)
-            }
-            onPress={() => {
-              signOut(auth);
-            }}
-            onEditPress={() =>
-              navigation.navigate("ProfileInformation", {
-                user: {
-                  name: user.name,
-                  phone: user.phone,
-                  email: auth.currentUser.email,
-                  id: auth.currentUser.uid,
-                },
-              })
-            }
-            name={user.name}
-          />
-        )
-      ) : (
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      >
         <ProfileCard
-          email={
-            auth.currentUser.email.charAt(0).toUpperCase() +
-            auth.currentUser.email.slice(1)
-          }
+          email={auth.currentUser.email}
           onPress={() => {
             signOut(auth);
           }}
           onEditPress={() =>
-            navigation.navigate("ProfileInformation", {
+            navigation.navigate("ProfileEdit", {
               user: {
                 name: user.name,
-                phone: user.phone,
+                weight: user.weight,
                 email: auth.currentUser.email,
                 id: auth.currentUser.uid,
+                age: user.age,
               },
             })
           }
           name={user.name}
-          staff
+          age={user.age}
+          weight={user.weight}
         />
-      )}
-      {user.type == null && (
+
         <NavButton
           icon="credit-card"
           title="Payment Methods"
@@ -105,20 +69,14 @@ export default function ({ navigation }) {
             navigation.navigate("PaymentMethods");
           }}
         />
-      )}
-      <NavButton
-        themeChanger
-        icon={themeContext.theme == "dark" ? "sun" : "moon"}
-        title={themeContext.theme == "dark" ? "Light Mode" : "Dark Mode"}
-        onPress={themeContext.toggleTheme}
-      />
-      <NavButton
-        icon="question-mark-circle"
-        title="Help"
-        onPress={() => {
-          navigation.navigate("Help");
-        }}
-      />
+        <NavButton
+          icon="question-mark-circle"
+          title="Help"
+          onPress={() => {
+            navigation.navigate("Help");
+          }}
+        />
+      </ScrollView>
     </Screen>
   );
 }

@@ -101,7 +101,7 @@ export default function ({ navigation, route }) {
               <AreaCard
                 title="Chest"
                 onPress={() =>
-                  handleButtonPress("chest", !selectedButtons["chest"])
+                  handleButtonPress("Chest", !selectedButtons["Chest"])
                 }
               />
             </Layout>
@@ -116,7 +116,7 @@ export default function ({ navigation, route }) {
               <AreaCard
                 title="Abs"
                 onPress={() =>
-                  handleButtonPress("abs", !selectedButtons["abs"])
+                  handleButtonPress("Abs", !selectedButtons["Abs"])
                 }
               />
             </Layout>
@@ -131,7 +131,10 @@ export default function ({ navigation, route }) {
               <AreaCard
                 title="Upper Arm"
                 onPress={() =>
-                  handleButtonPress("uArms", !selectedButtons["uArms"])
+                  handleButtonPress(
+                    "Upper Arms",
+                    !selectedButtons["Upper Arms"]
+                  )
                 }
               />
             </Layout>
@@ -146,7 +149,10 @@ export default function ({ navigation, route }) {
               <AreaCard
                 title="Lower Arm"
                 onPress={() =>
-                  handleButtonPress("lArms", !selectedButtons["lArms"])
+                  handleButtonPress(
+                    "Lower Arms",
+                    !selectedButtons["Lower Arms"]
+                  )
                 }
               />
             </Layout>
@@ -161,7 +167,10 @@ export default function ({ navigation, route }) {
               <AreaCard
                 title="Upper Leg"
                 onPress={() =>
-                  handleButtonPress("uLegs", !selectedButtons["uLegs"])
+                  handleButtonPress(
+                    "Upper Legs",
+                    !selectedButtons["Upper Legs"]
+                  )
                 }
               />
             </Layout>
@@ -176,7 +185,10 @@ export default function ({ navigation, route }) {
               <AreaCard
                 title="Lower Leg"
                 onPress={() =>
-                  handleButtonPress("lLegs", !selectedButtons["lLegs"])
+                  handleButtonPress(
+                    "Lower Legs",
+                    !selectedButtons["Lower Legs"]
+                  )
                 }
               />
             </Layout>

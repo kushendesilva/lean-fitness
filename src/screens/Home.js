@@ -1,381 +1,202 @@
-import React, { useState, useEffect, useContext } from "react";
-import { FlatList, RefreshControl } from "react-native";
-import * as Location from "expo-location";
+import React, { useState, useEffect } from "react";
 import { getAuth } from "firebase/auth";
+import { getDoc, doc, getFirestore } from "firebase/firestore/lite";
 import {
-  getDoc,
-  doc,
-  getFirestore,
-  query,
-  where,
-  collection,
-  getDocs,
-} from "firebase/firestore/lite";
-import { Icon, Layout, Text, Card, useTheme } from "@ui-kitten/components";
-import { ThemeContext } from "../configs/Theme";
+  FlatList,
+  ImageBackground,
+  ScrollView,
+  StyleSheet,
+  TouchableNativeFeedback,
+  RefreshControl,
+} from "react-native";
+import { Layout, Text } from "@ui-kitten/components";
 import Screen from "../components/Screen";
-import { OngoingCard } from "../components/OngoingCard";
-import { LocationCard } from "../components/LocationCard";
-import { NewCard } from "../components/NewCard";
-import { RequestCard } from "../components/RequestCard";
-import RenderIf from "../configs/RenderIf";
 
 export default function ({ navigation }) {
   const auth = getAuth();
   const db = getFirestore();
-  const user = auth.currentUser.uid;
-  const themeContext = useContext(ThemeContext);
-  const theme = useTheme();
-  const [location, setLocation] = useState(null);
-  const [address, setAddress] = useState("Loading...");
-  const trimmedAddress = address.substring(0, 35) + "...";
-  const [errorMsg, setErrorMsg] = useState(null);
-  const [mapRegion, setMapRegion] = useState({
-    latitude: 6.880622,
-    longitude: 79.9116138,
+
+  const [user, setUser] = useState({
+    name: "",
+    weight: "",
+    age: "",
+    areas: {},
   });
-  const [mapMarker, setMapMarker] = useState({
-    latitude: 6.880622,
-    longitude: 79.9116138,
-  });
-  const [lat, setLat] = useState(6.880622);
-  const [long, setLong] = useState(79.9116138);
-  let apiKey = "AIzaSyD87ToWqo4Y8vIjlgURucGldvbD5h44l3k";
-
-  useEffect(() => {
-    (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== "granted") {
-        setErrorMsg("Permission to access location was denied");
-        return;
-      }
-      Location.setGoogleApiKey(apiKey);
-      let location = await Location.getCurrentPositionAsync({});
-      setLocation(location);
-      setMapRegion({
-        longitude: location.coords.longitude,
-        latitude: location.coords.latitude,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      });
-      setLat(location.coords.latitude);
-      setLong(location.coords.longitude);
-      setMapMarker({
-        longitude: location.coords.longitude,
-        latitude: location.coords.latitude,
-      });
-      let address = await Location.reverseGeocodeAsync({
-        longitude: location.coords.longitude,
-        latitude: location.coords.latitude,
-      });
-      address.find((place) => {
-        setAddress(
-          "No." + place.streetNumber + ", " + place.street + ", " + place.city
-        );
-      });
-    })();
-  }, []);
-
-  let text = "Waiting..";
-  if (errorMsg) {
-    text = errorMsg;
-  } else if (location) {
-    text = JSON.stringify(location);
-  }
-
-  const [profile, setProfile] = useState({ name: "", phone: "" });
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     getNote();
   }, []);
 
   const getNote = async () => {
-    const docSnap = await getDoc(doc(db, "users", user));
+    const docSnap = await getDoc(doc(db, "users", auth.currentUser.uid));
     if (docSnap.exists()) {
       const userData = docSnap.data();
-      setProfile(userData);
+      setUser(userData);
     } else {
-      const userData = { name: "", phone: "" };
-      setProfile(userData);
+      const userData = { name: "", weight: "", age: "", areas: {} };
+      setUser(userData);
     }
   };
 
-  const [refreshing, setRefreshing] = useState(true);
-  const [agentList, setAgentList] = useState([]);
-  useEffect(() => {
-    getAgentList();
-  }, []);
-
-  const getAgentList = async () => {
-    const q = query(collection(db, "requests"), where("rider", "==", null));
-    const querySnapshot = await getDocs(q);
-    setAgentList(
-      querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-    );
+  const onRefresh = async () => {
+    setRefreshing(true);
+    await getNote();
     setRefreshing(false);
-    if (querySnapshot.empty) {
-      setAgentList(null);
-    }
   };
 
-  const [riderList, setRiderList] = useState([]);
-  useEffect(() => {
-    getRiderList();
-  }, []);
-
-  const getRiderList = async () => {
-    const q = query(collection(db, "requests"), where("riderID", "==", user));
-    const querySnapshot = await getDocs(q);
-    setRiderList(
-      querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-    );
-    setRefreshing(false);
-    if (querySnapshot.empty) {
-      setRiderList(null);
+  const areas = user.areas;
+  const renderItem = ({ item }) => {
+    if (areas[item] === true) {
+      return (
+        <TouchableNativeFeedback
+          onPress={() =>
+            navigation.navigate("ExerciseArea", {
+              area: item,
+            })
+          }
+        >
+          <Layout style={styles.cardSmall}>
+            <ImageBackground
+              style={styles.imageSmall}
+              source={require("../../assets/exercises/Abs.jpg")}
+            >
+              <Layout style={styles.titleContainerSmall}>
+                <Text category="h6" style={styles.titleSmall}>
+                  {item}
+                </Text>
+              </Layout>
+            </ImageBackground>
+          </Layout>
+        </TouchableNativeFeedback>
+      );
     }
+    return null;
   };
 
   return (
-    <>
-      {RenderIf(
-        profile.type == null,
-        <Screen headerTitle="Home">
-          <LocationCard
-            location={trimmedAddress}
-            onPress={() => {
-              navigation.navigate("ChangeLocation", {
-                location: {
-                  mapMarker: mapMarker,
-                  mapRegion: mapRegion,
-                  address: address,
-                },
-              });
-            }}
-          />
-          <OngoingCard
-            onPress={() => {
-              navigation.navigate("OngoingRequests");
-            }}
-          />
-          {profile.name == "" || profile.phone == "" ? (
-            <NewCard
-              isProfile
-              onPress={() =>
-                navigation.navigate("ProfileInformation", {
-                  user: {
-                    email: auth.currentUser.email,
-                    id: auth.currentUser.uid,
-                    name: profile.name,
-                    phone: profile.phone,
-                  },
-                })
-              }
-            />
-          ) : (
-            <NewCard
-              onPress={() => {
-                navigation.navigate("NewRequest", {
-                  request: {
-                    user,
-                    pickAd: address,
-                    pickLat: lat,
-                    pickLong: long,
-                    lat: 6.870622,
-                    long: 79.9216138,
-                    name: profile.name,
-                    phone: profile.phone,
-                  },
-                });
-              }}
-            />
-          )}
-        </Screen>
-      )}
-      {RenderIf(
-        profile.type == "rider",
-        <Screen headerTitle="Ongoing Requests">
+    <Screen headerTitle="Workout">
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      >
+        <Layout
+          style={{
+            paddingHorizontal: 20,
+            paddingBottom: 20,
+          }}
+        >
+          <TouchableNativeFeedback
+            onPress={() =>
+              navigation.navigate("Exercise", {
+                type: user.type,
+                weight: user.weight,
+              })
+            }
+          >
+            <Layout style={styles.card}>
+              <ImageBackground
+                style={styles.image}
+                source={require("../../assets/exercises/workout.jpg")}
+              >
+                <Layout style={styles.titleContainer}>
+                  <Text category="h6" style={styles.title}>
+                    Start Workout
+                  </Text>
+                </Layout>
+              </ImageBackground>
+            </Layout>
+          </TouchableNativeFeedback>
+        </Layout>
+        <Layout
+          style={{
+            paddingHorizontal: 20,
+            paddingBottom: 20,
+          }}
+        >
+          <Text style={{ fontWeight: "bold", marginBottom: 20 }} category="h6">
+            Specialized Areas
+          </Text>
           <FlatList
-            ListHeaderComponent={
-              <>
-                {riderList == null && (
-                  <Layout
-                    style={{
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flex: 1,
-                    }}
-                  >
-                    <Card
-                      style={{
-                        margin: "2%",
-                        backgroundColor: theme["color-info-default"],
-                        borderColor:
-                          themeContext.theme == "light"
-                            ? theme["color-info-default"]
-                            : theme["color-info-100"],
-                        borderRadius: 10,
-                        elevation: 5,
-                      }}
-                    >
-                      <Icon
-                        style={{
-                          width: 30,
-                          height: 30,
-                          alignSelf: "center",
-                          margin: 20,
-                        }}
-                        fill={theme["color-info-100"]}
-                        name="sync"
-                      />
-                      <Text
-                        style={{
-                          textAlign: "center",
-                          color: theme["color-info-100"],
-                          fontWeight: "bold",
-                        }}
-                        category="label"
-                      >
-                        No Requests Available, Pull to Refresh...
-                      </Text>
-                    </Card>
-                  </Layout>
-                )}
-              </>
-            }
-            refreshControl={
-              <RefreshControl
-                refreshing={refreshing}
-                onRefresh={getRiderList}
-              />
-            }
-            data={riderList}
-            keyExtractor={(item) => `${item.id}`}
-            renderItem={({ item }) =>
-              item.delivered == false && (
-                <RequestCard
-                  delivered={false}
-                  id={item.id}
-                  date={item.date}
-                  onPress={() => {
-                    navigation.navigate("Ongoing", {
-                      request: {
-                        id: item.id,
-                        pickAd: item.pickAd,
-                        dropAd: item.dropAd,
-                        date: item.date,
-                        time: item.time,
-                        pickLat: item.pickLat,
-                        pickLong: item.pickLong,
-                        dropLat: item.dropLat,
-                        dropLong: item.dropLong,
-                        lat: item.lat,
-                        long: item.long,
-                        phone: item.phone,
-                        name: item.name,
-                        rider: item.name,
-                        riderPhone: item.phone,
-                        price: item.price,
-                        type: "rider",
-                      },
-                    });
-                  }}
-                />
-              )
-            }
+            horizontal
+            data={Object.keys(areas)}
+            renderItem={renderItem}
+            keyExtractor={(item, index) => index.toString()}
           />
-        </Screen>
-      )}
-      {RenderIf(
-        profile.type == "agent",
-        <Screen headerTitle="New Requests">
-          <FlatList
-            ListHeaderComponent={
-              <>
-                {agentList == null && (
-                  <Layout
-                    style={{
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flex: 1,
-                    }}
-                  >
-                    <Card
-                      style={{
-                        margin: "2%",
-                        backgroundColor: theme["color-info-default"],
-                        borderColor:
-                          themeContext.theme == "light"
-                            ? theme["color-info-default"]
-                            : theme["color-info-100"],
-                        borderRadius: 10,
-                        elevation: 5,
-                      }}
-                    >
-                      <Icon
-                        style={{
-                          width: 30,
-                          height: 30,
-                          alignSelf: "center",
-                          margin: 20,
-                        }}
-                        fill={theme["color-info-100"]}
-                        name="sync"
-                      />
-                      <Text
-                        style={{
-                          textAlign: "center",
-                          color: theme["color-info-100"],
-                          fontWeight: "bold",
-                        }}
-                        category="label"
-                      >
-                        No Requests Available, Pull to Refresh...
-                      </Text>
-                    </Card>
-                  </Layout>
-                )}
-              </>
+        </Layout>
+        <Layout
+          style={{
+            paddingHorizontal: 20,
+            paddingBottom: 20,
+          }}
+        >
+          <TouchableNativeFeedback
+            onPress={() =>
+              navigation.navigate("DietPlan", {
+                weight: user.weight,
+              })
             }
-            refreshControl={
-              <RefreshControl
-                refreshing={refreshing}
-                onRefresh={getAgentList}
-              />
-            }
-            data={agentList}
-            keyExtractor={(item) => `${item.id}`}
-            renderItem={({ item }) => (
-              <RequestCard
-                id={item.id}
-                date={item.date}
-                onPress={() => {
-                  navigation.navigate("Ongoing", {
-                    request: {
-                      id: item.id,
-                      pickAd: item.pickAd,
-                      dropAd: item.dropAd,
-                      date: item.date,
-                      time: item.time,
-                      pickLat: item.pickLat,
-                      pickLong: item.pickLong,
-                      dropLat: item.dropLat,
-                      dropLong: item.dropLong,
-                      lat: item.lat,
-                      long: item.long,
-                      phone: item.phone,
-                      name: item.name,
-                      rider: item.name,
-                      riderPhone: item.phone,
-                      price: item.price,
-                      type: "agent",
-                    },
-                  });
-                }}
-              />
-            )}
-          />
-        </Screen>
-      )}
-    </>
+          >
+            <Layout style={styles.card}>
+              <ImageBackground
+                style={styles.image}
+                source={require("../../assets/exercises/diet.jpg")}
+              >
+                <Layout style={styles.titleContainer}>
+                  <Text category="h6" style={styles.title}>
+                    Diet plan
+                  </Text>
+                </Layout>
+              </ImageBackground>
+            </Layout>
+          </TouchableNativeFeedback>
+        </Layout>
+      </ScrollView>
+    </Screen>
   );
 }
+
+const styles = StyleSheet.create({
+  card: {
+    borderRadius: 8,
+    overflow: "hidden",
+  },
+  image: {
+    height: 200,
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  titleContainer: {
+    backgroundColor: "rgba(0,0,0,0.5)", // Add an overlay to the image
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    width: "100%",
+  },
+  title: {
+    color: "white",
+    textAlign: "center",
+  },
+  cardSmall: {
+    width: 150, // Set the width to fit two items in one screen
+    height: 150,
+    borderRadius: 8,
+    overflow: "hidden",
+    marginHorizontal: 8, // Add margin to separate the items
+  },
+  imageSmall: {
+    height: 150,
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  titleContainerSmall: {
+    backgroundColor: "rgba(0,0,0,0.5)", // Add an overlay to the image
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    width: "100%",
+  },
+  titleSmall: {
+    color: "white",
+    textAlign: "center",
+  },
+});

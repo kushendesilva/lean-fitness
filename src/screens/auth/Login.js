@@ -123,6 +123,7 @@ export default function ({ navigation }) {
             label="Email"
             placeholder="Your Email"
             onChangeText={(nextValue) => setEmail(nextValue)}
+            autoCapitalize="none"
           />
           <Input
             style={{ marginHorizontal: "2%", marginVertical: "1%" }}
