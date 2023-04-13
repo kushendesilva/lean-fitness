@@ -47,12 +47,14 @@ export default function ({ navigation }) {
     workoutList.forEach((workout) => {
       let date;
       if (workout.createdAt instanceof Date) {
-        date = workout.createdAt.toISOString().split("T")[0];
+        date = new Date(workout.createdAt.getTime() + 5.5 * 60 * 60 * 1000)
+          .toISOString()
+          .split("T")[0];
       } else if (
         workout.createdAt &&
         workout.createdAt.hasOwnProperty("seconds")
       ) {
-        date = new Date(workout.createdAt.seconds * 1000)
+        date = new Date(workout.createdAt.seconds * 1000 + 5.5 * 60 * 60 * 1000)
           .toISOString()
           .split("T")[0];
       }
