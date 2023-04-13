@@ -41,6 +41,7 @@ const Premium = ({ navigation }) => {
 
   const handleChat = () => {
     navigation.navigate("ChatScreen", {
+      role: user.role,
       uid: auth.currentUser.uid,
       displayName: user.name,
       photoURL:

@@ -33,6 +33,7 @@ export default function ({ navigation, route }) {
         weight,
         type,
         premium: false,
+        role: "regular",
       };
       const usersRef = doc(db, "users", uid);
       await setDoc(usersRef, data);

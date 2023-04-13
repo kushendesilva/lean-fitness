@@ -16,25 +16,41 @@ const ChatScreen = ({ route }) => {
   const [messages, setMessages] = useState([]);
 
   // Extract user data from route params
-  const { uid, displayName, photoURL } = route.params;
+  const { uid, displayName, photoURL, role } = route.params;
 
   useEffect(() => {
     // Fetch initial messages from Firebase Firestore
     const firestore = getFirestore();
-    const chatRef = doc(firestore, "chat", "Cn30HpE1yHOPj2K0vGNYLCIinIe2");
+    const chatRef = doc(firestore, "chat", "instructormessages");
     const messagesRef = collection(chatRef, "messages");
     const messagesQuery = query(messagesRef, orderBy("createdAt", "desc"));
     const unsubscribe = onSnapshot(messagesQuery, (querySnapshot) => {
-      const messages = querySnapshot.docs.map((doc) => {
-        const data = doc.data();
-        const id = doc.id;
-        return {
-          ...data,
-          _id: id,
-          createdAt: data.createdAt ? data.createdAt.toDate() : null, // Add null check for createdAt field
-        };
-      });
-      setMessages(messages);
+      const filteredMessages = querySnapshot.docs
+        .map((doc) => {
+          const data = doc.data();
+          const id = doc.id;
+          return {
+            ...data,
+            _id: id,
+            createdAt: data.createdAt ? data.createdAt.toDate() : null,
+          };
+        })
+        .filter((message) => {
+          // Filter messages based on user's role
+          if (role === "instructor") {
+            // If user is an instructor, show all messages
+            return true;
+          } else if (role === "regular") {
+            // If user is a regular user, show messages from instructors only
+            return (
+              message.user.role === "instructor" || message.user._id === uid
+            );
+          } else {
+            // For other roles, show only user's own messages
+            return message.user._id === uid;
+          }
+        });
+      setMessages(filteredMessages);
     });
 
     return () => unsubscribe();
@@ -47,10 +63,10 @@ const ChatScreen = ({ route }) => {
     const message = {
       text,
       createdAt,
-      user: { _id: uid, displayName, avatar: photoURL }, // Add avatar property
+      user: { _id: uid, displayName, avatar: photoURL, role }, // Add avatar property
     };
     const firestore = getFirestore();
-    const chatRef = doc(firestore, "chat", "Cn30HpE1yHOPj2K0vGNYLCIinIe2");
+    const chatRef = doc(firestore, "chat", "instructormessages");
     await addDoc(collection(chatRef, "messages"), message);
   };
 
