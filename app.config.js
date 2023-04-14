@@ -7,7 +7,7 @@ export default {
     owner: process.env.OWNER,
     githubUrl: process.env.GITHUB_URL,
     platforms: ["android"],
-    version: "1.3.1",
+    version: "1.3.2",
     orientation: "portrait",
     icon: "./assets/icon.png",
     splash: {
