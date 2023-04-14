@@ -94,7 +94,7 @@ export default function ({ navigation, route }) {
               style={{
                 position: "absolute",
                 top: 130,
-                left: 70,
+                left: 40,
                 backgroundColor: "rgba(0, 0, 0, 0)",
               }}
             >
@@ -109,7 +109,7 @@ export default function ({ navigation, route }) {
               style={{
                 position: "absolute",
                 top: 200,
-                left: 100,
+                left: 40,
                 backgroundColor: "rgba(0, 0, 0, 0)",
               }}
             >
@@ -123,7 +123,7 @@ export default function ({ navigation, route }) {
             <Layout
               style={{
                 position: "absolute",
-                right: 30,
+                right: 10,
                 top: 120,
                 backgroundColor: "rgba(0, 0, 0, 0)",
               }}
@@ -199,6 +199,7 @@ export default function ({ navigation, route }) {
             style={{
               marginTop: 30,
               marginHorizontal: 20,
+              marginBottom: 20,
             }}
             onPress={navigateToNextPage}
             disabled={!Object.values(selectedButtons).includes(true)}

@@ -106,6 +106,7 @@ export default function ({ navigation }) {
                 email: auth.currentUser.email,
                 id: auth.currentUser.uid,
                 age: user.age,
+                type: user.type,
               },
             })
           }

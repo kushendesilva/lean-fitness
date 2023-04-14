@@ -7,7 +7,7 @@ export default {
     owner: "kushendesilva",
     githubUrl: "https://github.com/kushendesilva/lean-fitness",
     platforms: ["android"],
-    version: "2.0.0",
+    version: "2.1.0",
     orientation: "portrait",
     icon: "./assets/icon.png",
     splash: {
