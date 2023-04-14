@@ -4,10 +4,10 @@ export default {
   expo: {
     name: "Lean Fitness",
     slug: "lean-fitness",
-    owner: "kushendesilva",
-    githubUrl: "https://github.com/kushendesilva/lean-fitness",
+    owner: process.env.OWNER,
+    githubUrl: process.env.GITHUB_URL,
     platforms: ["android"],
-    version: "1.2.2",
+    version: "1.3.0",
     orientation: "portrait",
     icon: "./assets/icon.png",
     splash: {
@@ -21,17 +21,17 @@ export default {
     assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true,
-      bundleIdentifier: "npc.cipher.leanfitness",
+      bundleIdentifier: process.env.PACKAGE_NAME,
     },
     android: {
-      package: "npc.cipher.leanfitness",
+      package: process.env.PACKAGE_NAME,
       adaptiveIcon: {
         foregroundImage: "./assets/icon_foreground.png",
         backgroundColor: "#ffffff",
       },
     },
     extra: {
-      eas: { projectId: "9bdddd60-4660-495d-8796-e203b10ac528" },
+      eas: { projectId: process.env.PROJECT_ID },
       apiKey: process.env.API_KEY,
       authDomain: process.env.AUTH_DOMAIN,
       projectId: process.env.PROJECT_ID,
