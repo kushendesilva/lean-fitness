@@ -86,7 +86,7 @@ export default function ({ navigation }) {
   };
 
   return (
-    <Screen headerTitle="Profile">
+    <Screen headerTitle="Your Profile">
       <ScrollView
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />

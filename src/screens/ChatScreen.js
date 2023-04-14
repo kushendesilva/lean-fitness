@@ -9,6 +9,7 @@ import {
   orderBy,
   onSnapshot,
   serverTimestamp,
+  updateDoc,
 } from "firebase/firestore";
 import Screen from "../components/Screen";
 
@@ -16,12 +17,12 @@ const ChatScreen = ({ route }) => {
   const [messages, setMessages] = useState([]);
 
   // Extract user data from route params
-  const { uid, displayName, photoURL, role } = route.params;
+  const { uid, displayName, photoURL, role, userRef } = route.params;
 
   useEffect(() => {
     // Fetch initial messages from Firebase Firestore
     const firestore = getFirestore();
-    const chatRef = doc(firestore, "chat", "instructormessages");
+    const chatRef = doc(firestore, "chat", userRef);
     const messagesRef = collection(chatRef, "messages");
     const messagesQuery = query(messagesRef, orderBy("createdAt", "desc"));
     const unsubscribe = onSnapshot(messagesQuery, (querySnapshot) => {
@@ -58,6 +59,10 @@ const ChatScreen = ({ route }) => {
 
   const handleSend = async (newMessages) => {
     // Add new message to Firebase Firestore
+    const now = new Date();
+    const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
+    const currentTimeString = `${currentHour}:${currentMinute}`;
     const text = newMessages[0].text;
     const createdAt = serverTimestamp(); // Use Firestore server timestamp
     const message = {
@@ -66,8 +71,18 @@ const ChatScreen = ({ route }) => {
       user: { _id: uid, displayName, avatar: photoURL, role }, // Add avatar property
     };
     const firestore = getFirestore();
-    const chatRef = doc(firestore, "chat", "instructormessages");
+    const chatRef = doc(firestore, "chat", userRef);
     await addDoc(collection(chatRef, "messages"), message);
+    {
+      role === "instructor"
+        ? await updateDoc(chatRef, {
+            updated: currentTimeString,
+          })
+        : await updateDoc(chatRef, {
+            user: displayName,
+            updated: currentTimeString,
+          });
+    }
   };
 
   return (

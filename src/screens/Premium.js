@@ -1,22 +1,55 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Image, ScrollView, RefreshControl } from "react-native";
-import { Icon, Text, Button, Card } from "@ui-kitten/components";
+import {
+  StyleSheet,
+  Image,
+  ScrollView,
+  RefreshControl,
+  FlatList,
+} from "react-native";
+import {
+  Icon,
+  Text,
+  Button,
+  Card,
+  ListItem,
+  Divider,
+} from "@ui-kitten/components";
 import Screen from "../components/Screen";
 import { getAuth } from "firebase/auth";
-import { getDoc, doc, getFirestore } from "firebase/firestore/lite";
+import {
+  query,
+  collection,
+  getDocs,
+  getDoc,
+  doc,
+  getFirestore,
+} from "firebase/firestore/lite";
 
 const Premium = ({ navigation }) => {
   const auth = getAuth();
   const db = getFirestore();
 
+  const [list, setList] = useState([]);
   const [user, setUser] = useState({
     premium: false,
+    role: "regular",
   });
   const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     getNote();
+    getList();
   }, []);
+
+  const getList = async () => {
+    const q = query(collection(db, "chat"));
+    const querySnapshot = await getDocs(q);
+    setList(querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    setRefreshing(false);
+    if (querySnapshot.empty) {
+      setList(null);
+    }
+  };
 
   const getNote = async () => {
     const docSnap = await getDoc(doc(db, "users", auth.currentUser.uid));
@@ -32,6 +65,7 @@ const Premium = ({ navigation }) => {
   const onRefresh = async () => {
     setRefreshing(true);
     await getNote();
+    await getList();
     setRefreshing(false);
   };
 
@@ -41,6 +75,7 @@ const Premium = ({ navigation }) => {
 
   const handleChat = () => {
     navigation.navigate("ChatScreen", {
+      userRef: auth.currentUser.uid,
       role: user.role,
       uid: auth.currentUser.uid,
       displayName: user.name,
@@ -49,66 +84,107 @@ const Premium = ({ navigation }) => {
     });
   };
 
-  return (
-    <Screen headerTitle={"Premium"}>
-      <ScrollView
-        refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }
-      >
-        <Card style={styles.container}>
-          <Image
-            resizeMode="contain"
-            style={{
-              height: 150,
-              marginVertical: 20,
-              alignSelf: "center",
-            }}
-            source={require("../../assets/logo-sm.png")}
-          />
+  const renderItemAccessory = (props, id) => (
+    <Button
+      size="tiny"
+      onPress={() =>
+        navigation.navigate("ChatScreen", {
+          userRef: id,
+          role: user.role,
+          uid: auth.currentUser.uid,
+          displayName: user.name,
+          photoURL:
+            "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/avatar.png?alt=media&token=bc40eb09-8f27-47dc-9bd2-7c0d6371d398",
+        })
+      }
+    >
+      Message
+    </Button>
+  );
 
-          {user.premium ? (
-            <>
-              <Icon
-                style={{ alignSelf: "center" }}
-                name="star"
-                width={32}
-                height={32}
-                fill="#8F9BB3"
-              />
-              <Text style={styles.title}>You Are a Premium Member</Text>
-              <Text style={styles.description}>
-                Congratulations on upgrading to Lean Fitness Premium! With your
-                subscription, you now have exclusive access to our team of
-                certified instructors who are ready to provide personalized
-                instructions and guidance via in-app chat.
-              </Text>
-              <Button size="large" onPress={handleChat}>
-                Chat With Instructor
-              </Button>
-            </>
-          ) : (
-            <>
-              <Icon
-                style={{ alignSelf: "center" }}
-                name="unlock"
-                width={32}
-                height={32}
-                fill="#8F9BB3"
-              />
-              <Text style={styles.title}>Unlock Premium Benefits!</Text>
-              <Text style={styles.description}>
-                Upgrade to Lean Fitness Premium and get exclusive access to our
-                team of certified instructors for personalized instructions via
-                in-app chat.
-              </Text>
-              <Button size="large" onPress={handleSubscribe}>
-                Subscribe Now
-              </Button>
-            </>
+  const renderItemIcon = (props) => <Icon {...props} name="person-outline" />;
+
+  return (
+    <Screen headerTitle={"Premium Features"}>
+      {user.role == "instructor" ? (
+        <FlatList
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
+          data={list}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <ListItem
+              style={{ marginHorizontal: 10 }}
+              title={item.user}
+              description={"Last Updated: " + item.updated}
+              accessoryLeft={renderItemIcon}
+              accessoryRight={() => renderItemAccessory({}, item.id)}
+              ItemSeparatorComponent={Divider}
+            />
           )}
-        </Card>
-      </ScrollView>
+        />
+      ) : (
+        <ScrollView
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
+        >
+          <Card style={styles.container}>
+            <Image
+              resizeMode="contain"
+              style={{
+                height: 150,
+                marginVertical: 20,
+                alignSelf: "center",
+              }}
+              source={require("../../assets/logo-sm.png")}
+            />
+
+            {user.premium ? (
+              <>
+                <Icon
+                  style={{ alignSelf: "center" }}
+                  name="star"
+                  width={32}
+                  height={32}
+                  fill="#8F9BB3"
+                />
+                <Text style={styles.title}>You Are a Premium Member</Text>
+                <Text style={styles.description}>
+                  Congratulations on upgrading to Lean Fitness Premium! With
+                  your subscription, you now have exclusive access to our team
+                  of certified instructors who are ready to provide personalized
+                  instructions and guidance via in-app chat.
+                </Text>
+
+                <Button size="large" onPress={handleChat}>
+                  Chat With Instructor
+                </Button>
+              </>
+            ) : (
+              <>
+                <Icon
+                  style={{ alignSelf: "center" }}
+                  name="unlock"
+                  width={32}
+                  height={32}
+                  fill="#8F9BB3"
+                />
+                <Text style={styles.title}>Unlock Premium Benefits!</Text>
+                <Text style={styles.description}>
+                  Upgrade to Lean Fitness Premium and get exclusive access to
+                  our team of certified instructors for personalized
+                  instructions via in-app chat.
+                </Text>
+                <Button size="large" onPress={handleSubscribe}>
+                  Subscribe Now
+                </Button>
+              </>
+            )}
+          </Card>
+        </ScrollView>
+      )}
     </Screen>
   );
 };

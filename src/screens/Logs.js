@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { FlatList, RefreshControl } from "react-native";
 import {
   query,
@@ -8,7 +8,7 @@ import {
   getFirestore,
 } from "firebase/firestore/lite";
 import { getAuth } from "firebase/auth";
-import { Icon, Text, ListItem, Button } from "@ui-kitten/components";
+import { Icon, ListItem, Button } from "@ui-kitten/components";
 import Screen from "../components/Screen";
 
 export default function ({ navigation }) {
@@ -39,7 +39,9 @@ export default function ({ navigation }) {
     <Button size="tiny">{`${elapsedTime} Seconds`}</Button>
   );
 
-  const renderItemIcon = (props) => <Icon {...props} name="person" />;
+  const renderItemIcon = (props) => (
+    <Icon {...props} name="clipboard-outline" />
+  );
 
   return (
     <Screen
