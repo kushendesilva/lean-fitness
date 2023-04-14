@@ -8,12 +8,10 @@
 
 <h3 align="left">Features</h3>
 
-- [x] Create Account
-- [x] Login
+- [x] Authentication
 - [x] Workout Programs
 - [x] Diet Plans
-- [x] Premium Features
-- [x] Chat
+- [x] Chat with Instructors
 
 <h3 align="left">Resources</h3>
 
