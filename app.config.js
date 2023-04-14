@@ -4,10 +4,10 @@ export default {
   expo: {
     name: "Lean Fitness",
     slug: "lean-fitness",
-    owner: process.env.OWNER,
-    githubUrl: process.env.GITHUB_URL,
+    owner: "kushendesilva",
+    githubUrl: "https://github.com/kushendesilva/lean-fitness",
     platforms: ["android"],
-    version: "1.3.2",
+    version: "2.0.0",
     orientation: "portrait",
     icon: "./assets/icon.png",
     splash: {
@@ -31,7 +31,7 @@ export default {
       },
     },
     extra: {
-      eas: { projectId: process.env.PROJECT_ID },
+      eas: { projectId: "9bdddd60-4660-495d-8796-e203b10ac528" },
       apiKey: process.env.API_KEY,
       authDomain: process.env.AUTH_DOMAIN,
       projectId: process.env.PROJECT_ID,
