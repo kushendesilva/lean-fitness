@@ -7,7 +7,7 @@ export default {
     owner: process.env.OWNER,
     githubUrl: process.env.GITHUB_URL,
     platforms: ["android"],
-    version: "1.3.0",
+    version: "1.3.1",
     orientation: "portrait",
     icon: "./assets/icon.png",
     splash: {
@@ -21,10 +21,10 @@ export default {
     assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true,
-      bundleIdentifier: process.env.PACKAGE_NAME,
+      bundleIdentifier: "npc.cipher.leanfitness",
     },
     android: {
-      package: process.env.PACKAGE_NAME,
+      package: "npc.cipher.leanfitness",
       adaptiveIcon: {
         foregroundImage: "./assets/icon_foreground.png",
         backgroundColor: "#ffffff",
