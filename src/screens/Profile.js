@@ -27,6 +27,7 @@ export default function ({ navigation }) {
   useEffect(() => {
     getNote();
     getList();
+    onRefresh();
   }, []);
 
   const getList = async () => {

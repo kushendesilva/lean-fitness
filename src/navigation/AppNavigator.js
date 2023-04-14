@@ -9,6 +9,7 @@ import {
   Icon,
 } from "@ui-kitten/components";
 import { AuthContext } from "../provider/AuthProvider";
+import Constants from "expo-constants";
 
 //Utility Screens
 import Loading from "../screens/utils/Loading";
@@ -38,14 +39,13 @@ import Register from "../screens/auth/Register";
 import ForgotPassword from "../screens/auth/ForgotPassword";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAFEUeW1W7Yt0DwEwnckX2A0zgwLXx25OA",
-  authDomain: "lean-fitness-ravindu.firebaseapp.com",
-  databaseURL:
-    "https://lean-fitness-ravindu-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "lean-fitness-ravindu",
-  storageBucket: "lean-fitness-ravindu.appspot.com",
-  messagingSenderId: "347051387393",
-  appId: "1:347051387393:web:7c7430fa85b05d5fc3ae00",
+  apiKey: Constants.manifest.extra.apiKey,
+  authDomain: Constants.manifest.extra.authDomain,
+  projectId: Constants.manifest.extra.projectId,
+  storageBucket: Constants.manifest.extra.storageBucket,
+  messagingSenderId: Constants.manifest.extra.messagingSenderId,
+  appId: Constants.manifest.extra.appId,
+  measurementId: Constants.manifest.extra.measurementId,
 };
 
 if (getApps().length === 0) {

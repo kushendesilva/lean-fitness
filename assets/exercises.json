@@ -8,32 +8,32 @@
           "exercises": [
             {
               "exerciseName": "Exercise 1",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 2",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/2.gif?alt=media&token=3d49d549-3689-48dd-8c00-c1ad0a791872",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/2.gif?alt=media&token=fdd1f464-1728-45a9-ba5c-d86cf38d74af",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 3",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/3.gif?alt=media&token=91a62201-9f0c-47f6-ab40-1c678bfa0668",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/3.gif?alt=media&token=a4ca0ca0-be95-4f4d-a567-ca46f797968e",
               "timeInSeconds": 15
             },
             {
               "exerciseName": "Exercise 4",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/4.gif?alt=media&token=438c6191-a8e4-4beb-8f6a-904ebe83cd98",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/4.gif?alt=media&token=b601dec2-b0a5-48b5-9efb-1539cbddd148",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 5",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/5.gif?alt=media&token=c1b21a82-c4d1-4c6a-9be2-b54543ea51ee",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/5.gif?alt=media&token=0ca1ab6e-cb69-431f-bd2a-2397c05c75c2",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 6",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/6.gif?alt=media&token=1e9a3d7e-541e-4c9a-a6de-24aa3dbd5dab",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/6.gif?alt=media&token=f1bdea03-671b-4758-b9ac-b174b651b7fb",
               "timeInSeconds": 15
             }
           ]
@@ -43,32 +43,32 @@
           "exercises": [
             {
               "exerciseName": "Exercise 7",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 8",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 9",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 15
             },
             {
               "exerciseName": "Exercise 10",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 11",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 12",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 15
             }
           ]
@@ -83,32 +83,32 @@
           "exercises": [
             {
               "exerciseName": "Exercise 13",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 14",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 15",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 15
             },
             {
               "exerciseName": "Exercise 16",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 17",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 18",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 15
             }
           ]
@@ -118,32 +118,32 @@
           "exercises": [
             {
               "exerciseName": "Exercise 13",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 14",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 15",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 15
             },
             {
               "exerciseName": "Exercise 16",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 17",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 18",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 15
             }
           ]
@@ -158,32 +158,32 @@
           "exercises": [
             {
               "exerciseName": "Exercise 19",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 20",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 21",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 15
             },
             {
               "exerciseName": "Exercise 4",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 5",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 6",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 15
             }
           ]
@@ -193,32 +193,32 @@
           "exercises": [
             {
               "exerciseName": "Exercise 7",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 8",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 9",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 15
             },
             {
               "exerciseName": "Exercise 10",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 11",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 12",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/1.gif?alt=media&token=2a46da80-8586-4e1a-8e19-39fb78243ccb",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
               "timeInSeconds": 15
             }
           ]

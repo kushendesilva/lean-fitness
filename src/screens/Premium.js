@@ -39,6 +39,7 @@ const Premium = ({ navigation }) => {
   useEffect(() => {
     getNote();
     getList();
+    onRefresh();
   }, []);
 
   const getList = async () => {
@@ -80,7 +81,7 @@ const Premium = ({ navigation }) => {
       uid: auth.currentUser.uid,
       displayName: user.name,
       photoURL:
-        "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/avatar.png?alt=media&token=bc40eb09-8f27-47dc-9bd2-7c0d6371d398",
+        "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/avatar.png?alt=media&token=f4f3026c-d6f3-4f80-9d29-341f97f34f63",
     });
   };
 
@@ -94,7 +95,7 @@ const Premium = ({ navigation }) => {
           uid: auth.currentUser.uid,
           displayName: user.name,
           photoURL:
-            "https://firebasestorage.googleapis.com/v0/b/lean-fitness-ravindu.appspot.com/o/avatar.png?alt=media&token=bc40eb09-8f27-47dc-9bd2-7c0d6371d398",
+            "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/avatar.png?alt=media&token=f4f3026c-d6f3-4f80-9d29-341f97f34f63",
         })
       }
     >

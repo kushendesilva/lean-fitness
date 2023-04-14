@@ -35,6 +35,7 @@ export default function ({ navigation }) {
 
   useEffect(() => {
     getNote();
+    onRefresh();
   }, []);
 
   const getNote = async () => {

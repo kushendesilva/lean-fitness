@@ -10,6 +10,7 @@ import {
   onSnapshot,
   serverTimestamp,
   updateDoc,
+  setDoc,
 } from "firebase/firestore";
 import Screen from "../components/Screen";
 
@@ -72,16 +73,21 @@ const ChatScreen = ({ route }) => {
     };
     const firestore = getFirestore();
     const chatRef = doc(firestore, "chat", userRef);
-    await addDoc(collection(chatRef, "messages"), message);
-    {
-      role === "instructor"
-        ? await updateDoc(chatRef, {
-            updated: currentTimeString,
-          })
-        : await updateDoc(chatRef, {
-            user: displayName,
-            updated: currentTimeString,
-          });
+
+    // Add message to "messages" subcollection
+    const chatCollectionRef = collection(chatRef, "messages");
+    await addDoc(chatCollectionRef, message);
+
+    if (role === "instructor") {
+      await updateDoc(chatRef, {
+        updated: currentTimeString,
+      });
+    } else {
+      await setDoc(chatRef, { user: displayName, updated: currentTimeString });
+      await updateDoc(chatRef, {
+        user: displayName,
+        updated: currentTimeString,
+      });
     }
   };
 
