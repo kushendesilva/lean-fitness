@@ -18,12 +18,12 @@
             },
             {
               "exerciseName": "Exercise 3",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/3.gif?alt=media&token=a4ca0ca0-be95-4f4d-a567-ca46f797968e",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/3.gif?alt=media&token=463bd7ba-3ee3-414a-9ff2-baa0a8362469",
               "timeInSeconds": 15
             },
             {
               "exerciseName": "Exercise 4",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/4.gif?alt=media&token=b601dec2-b0a5-48b5-9efb-1539cbddd148",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/4.gif?alt=media&token=7118c650-0c08-4fc6-84a3-d21bd99469ed",
               "timeInSeconds": 5
             },
             {
@@ -43,32 +43,32 @@
           "exercises": [
             {
               "exerciseName": "Exercise 7",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 8",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 9",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 15
             },
             {
               "exerciseName": "Exercise 10",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 11",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 12",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 15
             }
           ]
@@ -83,32 +83,32 @@
           "exercises": [
             {
               "exerciseName": "Exercise 13",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 14",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 15",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 15
             },
             {
               "exerciseName": "Exercise 16",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 17",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 18",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 15
             }
           ]
@@ -118,32 +118,32 @@
           "exercises": [
             {
               "exerciseName": "Exercise 13",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 14",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 15",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 15
             },
             {
               "exerciseName": "Exercise 16",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 17",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 18",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 15
             }
           ]
@@ -158,32 +158,32 @@
           "exercises": [
             {
               "exerciseName": "Exercise 19",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 20",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 21",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 15
             },
             {
               "exerciseName": "Exercise 4",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 5",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 6",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 15
             }
           ]
@@ -193,32 +193,32 @@
           "exercises": [
             {
               "exerciseName": "Exercise 7",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 8",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 9",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 15
             },
             {
               "exerciseName": "Exercise 10",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 5
             },
             {
               "exerciseName": "Exercise 11",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 10
             },
             {
               "exerciseName": "Exercise 12",
-              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/1.gif?alt=media&token=5f8402af-05fb-4bb2-b77b-ca260c2ac17d",
+              "gifPath": "https://firebasestorage.googleapis.com/v0/b/lean-fitness-app.appspot.com/o/7.gif?alt=media&token=c38a799a-27fa-4424-bd4d-b1998f907f3e",
               "timeInSeconds": 15
             }
           ]

@@ -14,7 +14,7 @@ import {
 } from "firebase/firestore";
 import Screen from "../components/Screen";
 
-const ChatScreen = ({ route }) => {
+const ChatScreen = ({ route, navigation }) => {
   const [messages, setMessages] = useState([]);
 
   // Extract user data from route params
